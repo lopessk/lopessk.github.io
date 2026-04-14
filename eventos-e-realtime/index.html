@@ -35,7 +35,7 @@
 img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 /*# sourceURL=wp-img-auto-sizes-contain-inline-css */
 </style>
-<link rel="stylesheet" id="blocksy-dynamic-global-css" href="https://lopessk.github.io/wp-content/uploads/blocksy/css/global.css?ver=48603" media="all">
+<link rel="stylesheet" id="blocksy-dynamic-global-css" href="https://lopessk.github.io/wp-content/uploads/blocksy/css/global.css?ver=03271" media="all">
 <style id="vp-dynamic-styles-a8RrW-inline-css">
 .vp-id-a8RrW .vp-portfolio__items {
   --vp-items__gap: 1px;
@@ -106,7 +106,7 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
 			}());
 		</script>
 				<style id="wp-custom-css">
-			/* Aplica o Full Width em TODO o site */
+			/* 1. Full Width Global (Mantém em tudo) */
 [data-layout="narrow"], 
 [data-layout="default"],
 .entry-content > *,
@@ -115,19 +115,29 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
     width: 100% !important;
 }
 
-/* Remove paddings em TODO o site */
-.entry-content {
+/* 2. Remover títulos de todas as páginas */
+.page-title, .entry-title {
+    display: none !important;
+}
+
+/* 3. Padding Zero APENAS na Home */
+body.home .entry-content {
     padding: 0 !important;
 }
 
-/* Ajusta a galeria em TODO o site */
-.vp-portfolio__items {
+/* 4. Ajuste de margem da galeria APENAS na Home */
+body.home .vp-portfolio__items {
     margin: 0 !important;
 }
 
-/* Remover título de TODAS as páginas */
-.page-title, .entry-title {
-    display: none !important;
+/* 5. Padding no single-portfolio para não ficar colado nas bordas */
+body.single-portfolio .entry-content {
+    padding: 1px 100px !important;
+}
+
+/* 6. Padding na página Sobre mim */
+body.page .entry-content {
+    padding: 1px 240px !important;
 }		</style>
 			</head>
 
@@ -144,7 +154,7 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
 		<div class="ct-panel-content" data-device="desktop"><div class="ct-panel-content-inner"></div></div><div class="ct-panel-content" data-device="mobile"><div class="ct-panel-content-inner">
 <nav class="mobile-menu menu-container has-submenu" data-id="mobile-menu" data-interaction="click" data-toggle-type="type-1" data-submenu-dots="yes">
 
-	<ul><li class="page_item page-item-157"><a href="https://lopessk.github.io/cinema-e-musica/" class="ct-menu-link">Cinema e Música</a></li><li class="page_item page-item-159"><a href="https://lopessk.github.io/corporativo-e-social/" class="ct-menu-link">Corporativo e Social</a></li><li class="page_item page-item-161 current_page_item current-menu-item"><span class="ct-sub-menu-parent"><a href="https://lopessk.github.io/eventos-e-realtime/" aria-current="page" class="ct-menu-link">Eventos e Realtime</a></span></li><li class="page_item page-item-6"><a href="https://lopessk.github.io/" class="ct-menu-link">Portfolio</a></li></ul></nav>
+	<ul><li class="page_item page-item-157"><a href="https://lopessk.github.io/cinema-e-musica/" class="ct-menu-link">Cinema e Música</a></li><li class="page_item page-item-159"><a href="https://lopessk.github.io/corporativo-e-social/" class="ct-menu-link">Corporativo e Social</a></li><li class="page_item page-item-161 current_page_item current-menu-item"><span class="ct-sub-menu-parent"><a href="https://lopessk.github.io/eventos-e-realtime/" aria-current="page" class="ct-menu-link">Eventos e Realtime</a></span></li><li class="page_item page-item-6"><a href="https://lopessk.github.io/" class="ct-menu-link">Portfolio</a></li><li class="page_item page-item-224"><a href="https://lopessk.github.io/sobre-mim/" class="ct-menu-link">Sobre mim</a></li></ul></nav>
 
 </div></div></div></div></div>
 <div id="main-container">
@@ -162,6 +172,7 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
 	<ul id="menu-menu-1" class="menu"><li id="menu-item-163" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-161 current_page_item menu-item-163"><a href="https://lopessk.github.io/eventos-e-realtime/" aria-current="page" class="ct-menu-link">Eventos e Realtime</a></li>
 <li id="menu-item-164" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-164"><a href="https://lopessk.github.io/corporativo-e-social/" class="ct-menu-link">Corporativo e Social</a></li>
 <li id="menu-item-165" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-165"><a href="https://lopessk.github.io/cinema-e-musica/" class="ct-menu-link">Cinema e Música</a></li>
+<li id="menu-item-227" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-227"><a href="https://lopessk.github.io/sobre-mim/" class="ct-menu-link">Sobre mim</a></li>
 </ul></nav>
 
 </div></div><div data-column="end" data-placements="1"><div data-items="primary">
@@ -246,7 +257,7 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
 			
 <div class="vp-portfolio__items vp-portfolio__items-style-emerge vp-portfolio__items-show-overlay-hover vp-portfolio__items-show-caption-hover">
 
-		<article class="vp-portfolio__item-wrap post-60 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-eventos vp-portfolio__item-uid-4dd96b64" data-vp-filter="eventos">
+		<article class="vp-portfolio__item-wrap post-60 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-eventos portfolio_tag-colorizacao portfolio_tag-finalizacao portfolio_tag-realtime portfolio_tag-sonorizacao vp-portfolio__item-uid-4dd96b64" data-vp-filter="eventos">
 									<figure class="vp-portfolio__item">
 				
 <div class="vp-portfolio__item-img-wrap">
@@ -280,7 +291,7 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
 			</figure>
 					</article>
 		
-		<article class="vp-portfolio__item-wrap post-175 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-eventos vp-portfolio__item-uid-842dd7c6" data-vp-filter="eventos">
+		<article class="vp-portfolio__item-wrap post-175 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-eventos portfolio_tag-finalizacao portfolio_tag-realtime vp-portfolio__item-uid-842dd7c6" data-vp-filter="eventos">
 									<figure class="vp-portfolio__item">
 				
 <div class="vp-portfolio__item-img-wrap">
@@ -314,7 +325,7 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
 			</figure>
 					</article>
 		
-		<article class="vp-portfolio__item-wrap post-30 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-eventos vp-portfolio__item-uid-30ae9f21" data-vp-filter="eventos">
+		<article class="vp-portfolio__item-wrap post-30 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-eventos portfolio_tag-colorizacao portfolio_tag-finalizacao portfolio_tag-realtime vp-portfolio__item-uid-30ae9f21" data-vp-filter="eventos">
 									<figure class="vp-portfolio__item">
 				
 <div class="vp-portfolio__item-img-wrap">
@@ -348,7 +359,7 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
 			</figure>
 					</article>
 		
-		<article class="vp-portfolio__item-wrap post-28 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-eventos vp-portfolio__item-uid-276e2652" data-vp-filter="eventos">
+		<article class="vp-portfolio__item-wrap post-28 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-eventos portfolio_tag-colorizacao portfolio_tag-finalizacao portfolio_tag-realtime vp-portfolio__item-uid-276e2652" data-vp-filter="eventos">
 									<figure class="vp-portfolio__item">
 				
 <div class="vp-portfolio__item-img-wrap">

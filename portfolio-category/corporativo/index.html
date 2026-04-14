@@ -41,7 +41,7 @@
 img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 /*# sourceURL=wp-img-auto-sizes-contain-inline-css */
 </style>
-<link rel="stylesheet" id="blocksy-dynamic-global-css" href="https://lopessk.github.io/wp-content/uploads/blocksy/css/global.css?ver=48603" media="all">
+<link rel="stylesheet" id="blocksy-dynamic-global-css" href="https://lopessk.github.io/wp-content/uploads/blocksy/css/global.css?ver=03271" media="all">
 <style id="vp-dynamic-styles-bead9770-inline-css">
 .vp-id-bead9770 .vp-portfolio__items {
   --vp-items__gap: 0px;
@@ -112,7 +112,7 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
 			}());
 		</script>
 				<style id="wp-custom-css">
-			/* Aplica o Full Width em TODO o site */
+			/* 1. Full Width Global (Mantém em tudo) */
 [data-layout="narrow"], 
 [data-layout="default"],
 .entry-content > *,
@@ -121,19 +121,29 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
     width: 100% !important;
 }
 
-/* Remove paddings em TODO o site */
-.entry-content {
+/* 2. Remover títulos de todas as páginas */
+.page-title, .entry-title {
+    display: none !important;
+}
+
+/* 3. Padding Zero APENAS na Home */
+body.home .entry-content {
     padding: 0 !important;
 }
 
-/* Ajusta a galeria em TODO o site */
-.vp-portfolio__items {
+/* 4. Ajuste de margem da galeria APENAS na Home */
+body.home .vp-portfolio__items {
     margin: 0 !important;
 }
 
-/* Remover título de TODAS as páginas */
-.page-title, .entry-title {
-    display: none !important;
+/* 5. Padding no single-portfolio para não ficar colado nas bordas */
+body.single-portfolio .entry-content {
+    padding: 1px 100px !important;
+}
+
+/* 6. Padding na página Sobre mim */
+body.page .entry-content {
+    padding: 1px 240px !important;
 }		</style>
 			</head>
 
@@ -150,7 +160,7 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
 		<div class="ct-panel-content" data-device="desktop"><div class="ct-panel-content-inner"></div></div><div class="ct-panel-content" data-device="mobile"><div class="ct-panel-content-inner">
 <nav class="mobile-menu menu-container" data-id="mobile-menu" data-interaction="click" data-toggle-type="type-1" data-submenu-dots="yes">
 
-	<ul><li class="page_item page-item-157"><a href="https://lopessk.github.io/cinema-e-musica/" class="ct-menu-link">Cinema e Música</a></li><li class="page_item page-item-159"><a href="https://lopessk.github.io/corporativo-e-social/" class="ct-menu-link">Corporativo e Social</a></li><li class="page_item page-item-161"><a href="https://lopessk.github.io/eventos-e-realtime/" class="ct-menu-link">Eventos e Realtime</a></li><li class="page_item page-item-6"><a href="https://lopessk.github.io/" class="ct-menu-link">Portfolio Category: Corporativo e Social</a></li></ul></nav>
+	<ul><li class="page_item page-item-157"><a href="https://lopessk.github.io/cinema-e-musica/" class="ct-menu-link">Cinema e Música</a></li><li class="page_item page-item-159"><a href="https://lopessk.github.io/corporativo-e-social/" class="ct-menu-link">Corporativo e Social</a></li><li class="page_item page-item-161"><a href="https://lopessk.github.io/eventos-e-realtime/" class="ct-menu-link">Eventos e Realtime</a></li><li class="page_item page-item-6"><a href="https://lopessk.github.io/" class="ct-menu-link">Portfolio Category: Corporativo e Social</a></li><li class="page_item page-item-224"><a href="https://lopessk.github.io/sobre-mim/" class="ct-menu-link">Sobre mim</a></li></ul></nav>
 
 </div></div></div></div></div>
 <div id="main-container">
@@ -168,6 +178,7 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
 	<ul id="menu-menu-1" class="menu"><li id="menu-item-163" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-163"><a href="https://lopessk.github.io/eventos-e-realtime/" class="ct-menu-link">Eventos e Realtime</a></li>
 <li id="menu-item-164" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-164"><a href="https://lopessk.github.io/corporativo-e-social/" class="ct-menu-link">Corporativo e Social</a></li>
 <li id="menu-item-165" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-165"><a href="https://lopessk.github.io/cinema-e-musica/" class="ct-menu-link">Cinema e Música</a></li>
+<li id="menu-item-227" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-227"><a href="https://lopessk.github.io/sobre-mim/" class="ct-menu-link">Sobre mim</a></li>
 </ul></nav>
 
 </div></div><div data-column="end" data-placements="1"><div data-items="primary">
@@ -252,7 +263,7 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
 			
 <div class="vp-portfolio__items vp-portfolio__items-style-emerge vp-portfolio__items-show-overlay-hover vp-portfolio__items-show-caption-hover">
 
-		<article class="vp-portfolio__item-wrap post-22 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-entretenimento vp-portfolio__item-uid-c7bbcf4c" data-vp-filter="entretenimento">
+		<article class="vp-portfolio__item-wrap post-22 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-entretenimento portfolio_tag-edicao portfolio_tag-finalizacao vp-portfolio__item-uid-c7bbcf4c" data-vp-filter="entretenimento">
 									<figure class="vp-portfolio__item">
 				
 <div class="vp-portfolio__item-img-wrap">
@@ -286,7 +297,7 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
 			</figure>
 					</article>
 		
-		<article class="vp-portfolio__item-wrap post-20 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-entretenimento vp-portfolio__item-uid-29b5ae60" data-vp-filter="entretenimento">
+		<article class="vp-portfolio__item-wrap post-20 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-entretenimento portfolio_tag-edicao portfolio_tag-finalizacao vp-portfolio__item-uid-29b5ae60" data-vp-filter="entretenimento">
 									<figure class="vp-portfolio__item">
 				
 <div class="vp-portfolio__item-img-wrap">
@@ -320,7 +331,7 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
 			</figure>
 					</article>
 		
-		<article class="vp-portfolio__item-wrap post-16 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-corporativo vp-portfolio__item-uid-ebfb5896" data-vp-filter="corporativo">
+		<article class="vp-portfolio__item-wrap post-16 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-corporativo portfolio_tag-colorizacao portfolio_tag-edicao portfolio_tag-finalizacao portfolio_tag-sonorizacao vp-portfolio__item-uid-ebfb5896" data-vp-filter="corporativo">
 									<figure class="vp-portfolio__item">
 				
 <div class="vp-portfolio__item-img-wrap">
@@ -354,7 +365,7 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
 			</figure>
 					</article>
 		
-		<article class="vp-portfolio__item-wrap post-57 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-entretenimento vp-portfolio__item-uid-f890ad04" data-vp-filter="entretenimento">
+		<article class="vp-portfolio__item-wrap post-57 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-entretenimento portfolio_tag-edicao portfolio_tag-finalizacao vp-portfolio__item-uid-f890ad04" data-vp-filter="entretenimento">
 									<figure class="vp-portfolio__item">
 				
 <div class="vp-portfolio__item-img-wrap">
@@ -388,7 +399,7 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
 			</figure>
 					</article>
 		
-		<article class="vp-portfolio__item-wrap post-60 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-eventos vp-portfolio__item-uid-4dd96b64" data-vp-filter="eventos">
+		<article class="vp-portfolio__item-wrap post-60 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-eventos portfolio_tag-colorizacao portfolio_tag-finalizacao portfolio_tag-realtime portfolio_tag-sonorizacao vp-portfolio__item-uid-4dd96b64" data-vp-filter="eventos">
 									<figure class="vp-portfolio__item">
 				
 <div class="vp-portfolio__item-img-wrap">
@@ -422,7 +433,7 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
 			</figure>
 					</article>
 		
-		<article class="vp-portfolio__item-wrap post-135 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-corporativo vp-portfolio__item-uid-e04112c2" data-vp-filter="corporativo">
+		<article class="vp-portfolio__item-wrap post-135 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-corporativo portfolio_tag-animacao portfolio_tag-colorizacao portfolio_tag-design portfolio_tag-edicao portfolio_tag-finalizacao vp-portfolio__item-uid-e04112c2" data-vp-filter="corporativo">
 									<figure class="vp-portfolio__item">
 				
 <div class="vp-portfolio__item-img-wrap">
@@ -456,7 +467,7 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
 			</figure>
 					</article>
 		
-		<article class="vp-portfolio__item-wrap post-175 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-eventos vp-portfolio__item-uid-842dd7c6" data-vp-filter="eventos">
+		<article class="vp-portfolio__item-wrap post-175 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-eventos portfolio_tag-finalizacao portfolio_tag-realtime vp-portfolio__item-uid-842dd7c6" data-vp-filter="eventos">
 									<figure class="vp-portfolio__item">
 				
 <div class="vp-portfolio__item-img-wrap">
@@ -490,7 +501,7 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
 			</figure>
 					</article>
 		
-		<article class="vp-portfolio__item-wrap post-63 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-entretenimento vp-portfolio__item-uid-d4d03ade" data-vp-filter="entretenimento">
+		<article class="vp-portfolio__item-wrap post-63 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-entretenimento portfolio_tag-edicao portfolio_tag-finalizacao vp-portfolio__item-uid-d4d03ade" data-vp-filter="entretenimento">
 									<figure class="vp-portfolio__item">
 				
 <div class="vp-portfolio__item-img-wrap">
@@ -524,7 +535,7 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
 			</figure>
 					</article>
 		
-		<article class="vp-portfolio__item-wrap post-128 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-corporativo vp-portfolio__item-uid-87eb5f3e" data-vp-filter="corporativo">
+		<article class="vp-portfolio__item-wrap post-128 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-corporativo portfolio_tag-animacao portfolio_tag-design portfolio_tag-finalizacao portfolio_tag-roteiro portfolio_tag-sonorizacao vp-portfolio__item-uid-87eb5f3e" data-vp-filter="corporativo">
 									<figure class="vp-portfolio__item">
 				
 <div class="vp-portfolio__item-img-wrap">
@@ -558,7 +569,7 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
 			</figure>
 					</article>
 		
-		<article class="vp-portfolio__item-wrap post-18 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-entretenimento vp-portfolio__item-uid-0c437591" data-vp-filter="entretenimento">
+		<article class="vp-portfolio__item-wrap post-18 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-entretenimento portfolio_tag-edicao portfolio_tag-finalizacao vp-portfolio__item-uid-0c437591" data-vp-filter="entretenimento">
 									<figure class="vp-portfolio__item">
 				
 <div class="vp-portfolio__item-img-wrap">
@@ -592,7 +603,7 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
 			</figure>
 					</article>
 		
-		<article class="vp-portfolio__item-wrap post-30 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-eventos vp-portfolio__item-uid-30ae9f21" data-vp-filter="eventos">
+		<article class="vp-portfolio__item-wrap post-30 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-eventos portfolio_tag-colorizacao portfolio_tag-finalizacao portfolio_tag-realtime vp-portfolio__item-uid-30ae9f21" data-vp-filter="eventos">
 									<figure class="vp-portfolio__item">
 				
 <div class="vp-portfolio__item-img-wrap">
@@ -626,7 +637,7 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
 			</figure>
 					</article>
 		
-		<article class="vp-portfolio__item-wrap post-149 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-entretenimento vp-portfolio__item-uid-a6b6c82e" data-vp-filter="entretenimento">
+		<article class="vp-portfolio__item-wrap post-149 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-entretenimento portfolio_tag-animacao portfolio_tag-design portfolio_tag-finalizacao portfolio_tag-roteiro vp-portfolio__item-uid-a6b6c82e" data-vp-filter="entretenimento">
 									<figure class="vp-portfolio__item">
 				
 <div class="vp-portfolio__item-img-wrap">
@@ -660,7 +671,7 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
 			</figure>
 					</article>
 		
-		<article class="vp-portfolio__item-wrap post-146 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-entretenimento vp-portfolio__item-uid-3609d5bf" data-vp-filter="entretenimento">
+		<article class="vp-portfolio__item-wrap post-146 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-entretenimento portfolio_tag-colorizacao portfolio_tag-edicao portfolio_tag-finalizacao vp-portfolio__item-uid-3609d5bf" data-vp-filter="entretenimento">
 									<figure class="vp-portfolio__item">
 				
 <div class="vp-portfolio__item-img-wrap">
@@ -694,7 +705,7 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
 			</figure>
 					</article>
 		
-		<article class="vp-portfolio__item-wrap post-131 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-corporativo vp-portfolio__item-uid-e72cd6db" data-vp-filter="corporativo">
+		<article class="vp-portfolio__item-wrap post-131 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-corporativo portfolio_tag-colorizacao portfolio_tag-edicao portfolio_tag-finalizacao portfolio_tag-sonorizacao vp-portfolio__item-uid-e72cd6db" data-vp-filter="corporativo">
 									<figure class="vp-portfolio__item">
 				
 <div class="vp-portfolio__item-img-wrap">
@@ -728,7 +739,7 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
 			</figure>
 					</article>
 		
-		<article class="vp-portfolio__item-wrap post-28 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-eventos vp-portfolio__item-uid-276e2652" data-vp-filter="eventos">
+		<article class="vp-portfolio__item-wrap post-28 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-eventos portfolio_tag-colorizacao portfolio_tag-finalizacao portfolio_tag-realtime vp-portfolio__item-uid-276e2652" data-vp-filter="eventos">
 									<figure class="vp-portfolio__item">
 				
 <div class="vp-portfolio__item-img-wrap">
@@ -762,7 +773,7 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
 			</figure>
 					</article>
 		
-		<article class="vp-portfolio__item-wrap post-24 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-corporativo vp-portfolio__item-uid-2ed86a79" data-vp-filter="corporativo">
+		<article class="vp-portfolio__item-wrap post-24 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-corporativo portfolio_tag-colorizacao portfolio_tag-edicao portfolio_tag-finalizacao vp-portfolio__item-uid-2ed86a79" data-vp-filter="corporativo">
 									<figure class="vp-portfolio__item">
 				
 <div class="vp-portfolio__item-img-wrap">
@@ -796,7 +807,7 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
 			</figure>
 					</article>
 		
-		<article class="vp-portfolio__item-wrap post-26 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-corporativo vp-portfolio__item-uid-c0d60b55" data-vp-filter="corporativo">
+		<article class="vp-portfolio__item-wrap post-26 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-corporativo portfolio_tag-animacao portfolio_tag-design portfolio_tag-finalizacao vp-portfolio__item-uid-c0d60b55" data-vp-filter="corporativo">
 									<figure class="vp-portfolio__item">
 				
 <div class="vp-portfolio__item-img-wrap">
@@ -830,7 +841,7 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
 			</figure>
 					</article>
 		
-		<article class="vp-portfolio__item-wrap post-138 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-corporativo vp-portfolio__item-uid-9ef06e7f" data-vp-filter="corporativo">
+		<article class="vp-portfolio__item-wrap post-138 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-corporativo portfolio_tag-animacao portfolio_tag-design portfolio_tag-finalizacao vp-portfolio__item-uid-9ef06e7f" data-vp-filter="corporativo">
 									<figure class="vp-portfolio__item">
 				
 <div class="vp-portfolio__item-img-wrap">
@@ -864,7 +875,7 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
 			</figure>
 					</article>
 		
-		<article class="vp-portfolio__item-wrap post-14 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-entretenimento vp-portfolio__item-uid-05f539ba" data-vp-filter="entretenimento">
+		<article class="vp-portfolio__item-wrap post-14 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-entretenimento portfolio_tag-ass-direcao portfolio_tag-edicao portfolio_tag-finalizacao portfolio_tag-producao-cultural portfolio_tag-roteiro vp-portfolio__item-uid-05f539ba" data-vp-filter="entretenimento">
 									<figure class="vp-portfolio__item">
 				
 <div class="vp-portfolio__item-img-wrap">
@@ -898,7 +909,7 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
 			</figure>
 					</article>
 		
-		<article class="vp-portfolio__item-wrap post-12 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-entretenimento vp-portfolio__item-uid-ec969c8f" data-vp-filter="entretenimento">
+		<article class="vp-portfolio__item-wrap post-12 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-entretenimento portfolio_tag-ass-direcao portfolio_tag-colorizacao portfolio_tag-edicao portfolio_tag-producao-cultural vp-portfolio__item-uid-ec969c8f" data-vp-filter="entretenimento">
 									<figure class="vp-portfolio__item">
 				
 <div class="vp-portfolio__item-img-wrap">
@@ -932,7 +943,7 @@ var VPData = {"version":"3.5.2","pro":false,"__":{"couldnt_retrieve_vp":"Couldn'
 			</figure>
 					</article>
 		
-		<article class="vp-portfolio__item-wrap post-9 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-entretenimento vp-portfolio__item-uid-f4df51e7" data-vp-filter="entretenimento">
+		<article class="vp-portfolio__item-wrap post-9 portfolio type-portfolio status-publish format-standard has-post-thumbnail hentry portfolio_category-entretenimento portfolio_tag-direcao portfolio_tag-edicao portfolio_tag-producao-cultural portfolio_tag-roteiro vp-portfolio__item-uid-f4df51e7" data-vp-filter="entretenimento">
 									<figure class="vp-portfolio__item">
 				
 <div class="vp-portfolio__item-img-wrap">
